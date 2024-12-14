@@ -10,8 +10,14 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.x",
+    "@react-navigation/native": "^6.x",
+    "@reduxjs/toolkit": "^2.5.0",
     "react": "18.2.0",
-    "react-native": "0.71.19"
+    "react-native": "0.71.19",
+    "react-native-safe-area-context": "^5.0.0",
+    "react-native-screens": "^4.3.0",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
