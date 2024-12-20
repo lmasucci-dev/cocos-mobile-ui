@@ -1,14 +1,13 @@
-import {configureStore, createSlice} from '@reduxjs/toolkit';
-const reducerSlice = createSlice({
-  name: 'store',
-  initialState: {},
-  reducers: {
-    someAction: function () {},
-  },
-});
-const store = configureStore({
+import {configureStore} from '@reduxjs/toolkit';
+import instrumentsReducer from './instruments/instrumentsSlice';
+
+export const store = configureStore({
   reducer: {
-    someReducer: reducerSlice.reducer,
+    instruments: instrumentsReducer,
   },
 });
+
+export type State = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
 export default store;
