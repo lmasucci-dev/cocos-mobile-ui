@@ -1,15 +1,13 @@
-// src/components/FullScreenLoader.tsx
-
 import React from 'react';
-import {View, ActivityIndicator, Text} from 'react-native';
+import {ActivityIndicator} from 'react-native';
 import styles from './styles';
+import {loader} from '@constants/colors';
 
-const FullScreenLoader = ({message = 'Aguarda un momento ...'}) => {
+const FullScreenLoader = () => {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator size="large" color="#0000ff" />
-      <Text style={styles.message}>{message}</Text>
-    </View>
+    <>
+      <ActivityIndicator style={styles.container} size="large" color={loader} />
+    </>
   );
 };
 

@@ -3,13 +3,18 @@ import {backgroundColor, white} from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 8,
     backgroundColor: backgroundColor,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
-  message: {
-    marginTop: 20,
+  input: {
+    height: 40,
+    paddingHorizontal: 8,
+    backgroundColor: backgroundColor,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: white,
     fontSize: 16,
     color: white,
   },

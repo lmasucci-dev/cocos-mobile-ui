@@ -1,9 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import instrumentsReducer from './instruments/instrumentsSlice';
+import portfolioReducer from './portfolio/portfolioSlice';
 
 export const store = configureStore({
   reducer: {
     instruments: instrumentsReducer,
+    portfolio: portfolioReducer,
   },
 });
 

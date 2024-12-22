@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {calculatePercentage} from '@utils/numberUtils';
-import Avatar from '@screens/Instruments/components/Avatar';
+import Avatar from '@components/Avatar';
 import {Instrument} from '@interfaces/instrumentsInterface';
 
 import styles from './styles';

@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {white} from '@constants/colors';
 
 export default StyleSheet.create({
   row: {
@@ -19,7 +20,7 @@ export default StyleSheet.create({
     textAlign: 'right',
   },
   text: {
-    color: 'white',
+    color: white,
     fontSize: 16,
     fontWeight: 'bold',
   },

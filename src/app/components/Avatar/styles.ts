@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {avatarBackground} from '../../../../../constants/colors';
+import {avatarBackground, white} from '@constants/colors';
 
 export default StyleSheet.create({
   text: {
-    color: 'white',
+    color: white,
     fontSize: 14,
     fontWeight: 'bold',
   },

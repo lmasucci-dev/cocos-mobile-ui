@@ -4,13 +4,14 @@ import InstrumentsScreen from '../../screens/Instruments';
 import PortfolioScreen from '../../screens/Portfolio';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Routes from '../../../constants/routes';
+import {defaultNavOptions} from '@config/navigation';
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={defaultNavOptions}>
         <Tab.Screen name={Routes.Instruments} component={InstrumentsScreen} />
         <Tab.Screen name={Routes.Portfolio} component={PortfolioScreen} />
       </Tab.Navigator>
