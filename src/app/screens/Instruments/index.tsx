@@ -8,6 +8,7 @@ import useInstruments from './hooks/useInstruments';
 import styles from './styles';
 import OrderModal from './components/OrderModal';
 import useOrders from '@app/hooks/useOrders';
+import FeedbackModal from '@app/components/FeedbackModal';
 
 function InstrumentsScreen() {
   const {instruments, loading, searchQuery, setSearchQuery} = useInstruments();
@@ -17,6 +18,9 @@ function InstrumentsScreen() {
     selectedInstrument,
     modalVisible,
     handleSubmit,
+    feedbackModalVisible,
+    setFeedbackModalVisible,
+    message,
   } = useOrders();
   return (
     <View style={styles.backgroundColor}>
@@ -41,6 +45,11 @@ function InstrumentsScreen() {
           handleSubmit={handleSubmit}
         />
       )}
+      <FeedbackModal
+        visible={feedbackModalVisible}
+        setVisible={setFeedbackModalVisible}
+        message={message || ''}
+      />
     </View>
   );
 }

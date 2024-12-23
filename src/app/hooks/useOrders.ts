@@ -11,6 +11,25 @@ function useOrders() {
   const [selectedInstrumentID, setSelectedInstrumentID] = useState<
     number | null
   >(null);
+  const [feedbackModalVisible, setFeedbackModalVisible] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  const handleOrdersFeedback = ({id, status}: {id: string; status: string}) => {
+    if (status === 'REJECTED') {
+      setMessage(`ID: ${id} - La orden no cumple con los requerimientos.`);
+    }
+
+    if (status === 'PENDING') {
+      setMessage('La orden fue enviada al mercado.');
+    }
+
+    if (status === 'FILLED') {
+      setMessage('La orden fue ejecutada.');
+    }
+    setModalVisible(false);
+    setFeedbackModalVisible(true);
+  };
+
   const handleSubmit = async (
     type: 'BUY' | 'SELL',
     kind: 'MARKET' | 'LIMIT',
@@ -32,9 +51,7 @@ function useOrders() {
 
     try {
       const res = await createOrder(payload as OrderPayload);
-      if (res?.data) {
-        Alert.alert('Success', 'Order submitted successfully.');
-      }
+      handleOrdersFeedback(res?.data);
     } catch (error) {
       Alert.alert('Error', 'Failed to submit order.');
     }
@@ -58,6 +75,9 @@ function useOrders() {
     handleOpenModal,
     handleCloseModal,
     handleSubmit,
+    feedbackModalVisible,
+    setFeedbackModalVisible,
+    message,
   };
 }
 
