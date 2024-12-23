@@ -9,6 +9,7 @@ function useInstruments() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
+
   const {instruments} = useSelector((state: State) => state.instruments);
 
   const getInstruments = useCallback(

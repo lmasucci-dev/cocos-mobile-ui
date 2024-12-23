@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {apiVercelBaseUrl} from '../constants/apiConfig';
+import {apiVercelBaseUrl} from '@constants/apiConfig';
 
 const config = {
   headers: {'Content-Type': 'application/json'},

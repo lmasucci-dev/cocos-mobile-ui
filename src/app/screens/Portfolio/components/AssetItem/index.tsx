@@ -1,12 +1,18 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import Avatar from '@components/Avatar';
 import {Asset} from '@interfaces/portfolioInterface';
 import {calculatePercentage} from '@utils/numberUtils';
 
 import styles from './styles';
 
-const AssetItem = ({item}: {item: Asset}) => {
+const AssetItem = ({
+  item,
+  onAssetPress,
+}: {
+  item: Asset;
+  onAssetPress: (name: string, id: number) => void;
+}) => {
   const totalPerformance = parseFloat(
     calculatePercentage(item.avg_cost_price, item.last_price),
   );
@@ -19,7 +25,9 @@ const AssetItem = ({item}: {item: Asset}) => {
   const marketValue = item.last_price * item.quantity;
 
   return (
-    <View style={styles.row}>
+    <TouchableOpacity
+      style={styles.row}
+      onPress={() => onAssetPress(item.ticker, item.instrument_id)}>
       <Avatar ticker={item.ticker} />
       <View style={styles.cellContainer}>
         <Text
@@ -42,7 +50,7 @@ const AssetItem = ({item}: {item: Asset}) => {
           {`Rendimiento: ${sign}${totalPerformance.toFixed(2)}%`}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
