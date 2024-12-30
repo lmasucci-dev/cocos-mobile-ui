@@ -1,11 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Instrument} from '../../interfaces/instrumentsInterface';
 
-interface InstrumentsState {
+export interface InstrumentsState {
   instruments: Instrument[];
 }
 
-const initialState: InstrumentsState = {
+export const initialState: InstrumentsState = {
   instruments: [],
 };
 

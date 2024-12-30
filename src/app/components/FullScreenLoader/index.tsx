@@ -6,7 +6,12 @@ import {loader} from '@constants/colors';
 const FullScreenLoader = () => {
   return (
     <>
-      <ActivityIndicator style={styles.container} size="large" color={loader} />
+      <ActivityIndicator
+        style={styles.container}
+        size="large"
+        color={loader}
+        testID="loading"
+      />
     </>
   );
 };

@@ -2,10 +2,6 @@ import axios from 'axios';
 import {apiVercelBaseUrl} from '@constants/apiConfig';
 import {OrderPayload} from '@interfaces/ordersInterface';
 
-const config = {
-  headers: {'Content-Type': 'application/json'},
-};
-
 export const createOrder = async (payload: OrderPayload) => {
   let body;
   if (payload.type === 'BUY') {
@@ -25,8 +21,8 @@ export const createOrder = async (payload: OrderPayload) => {
     };
   }
   try {
-    return await axios.post(`${apiVercelBaseUrl}/orders`, body, config);
+    return await axios.post(`${apiVercelBaseUrl}/orders`, body);
   } catch (error) {
-    console.log(error.response);
+    console.log(error);
   }
 };

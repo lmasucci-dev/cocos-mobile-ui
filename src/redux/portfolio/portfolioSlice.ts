@@ -1,11 +1,11 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Asset} from '@interfaces/portfolioInterface';
 
-interface PortfolioState {
+export interface PortfolioState {
   portfolio: Asset[];
 }
 
-const initialState: PortfolioState = {
+export const initialState: PortfolioState = {
   portfolio: [],
 };
 

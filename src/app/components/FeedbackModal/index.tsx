@@ -18,15 +18,18 @@ function FeedbackModal({
       visible={visible}
       transparent
       animationType="slide"
-      onRequestClose={() => setVisible(false)}>
-      <View style={styles.modalContainer}>
-        <View style={styles.content}>
-          <Text style={styles.title}>{message}</Text>
-
+      onRequestClose={() => setVisible(false)}
+      accessible={false}>
+      <View style={styles.modalContainer} accessible={false}>
+        <View style={styles.content} accessible={false}>
+          <Text style={styles.title} testID="txtFeedbackTitle">
+            {message}
+          </Text>
           <View style={styles.closeButton}>
             <Button
               title="OK"
               color="white"
+              testID="btnActionFeedback"
               onPress={() => setVisible(false)}
             />
           </View>
